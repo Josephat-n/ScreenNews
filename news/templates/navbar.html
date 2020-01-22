@@ -12,6 +12,7 @@
        <!-- Navbar Right Side -->
        <div class="navbar-nav">
         {% if user.is_authenticated %}
+        <span class="label label-default">{{ user.username }}</span>
         <a class="nav-item nav-link" href="{% url 'user-profile' %}">Profile</a>
         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
       {% else %}
