@@ -10,9 +10,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
+CURRENT_API_KEY = config('CURRENT_API_KEY')
+NEWS_API_KEY = config('NEWS_API_KEY')
 
 # Application definition
-
 INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'bootstrap4',
