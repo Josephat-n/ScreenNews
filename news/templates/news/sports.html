@@ -1,14 +1,14 @@
 {%extends "base.html"%}
 {% block content %} 
 {% load static %}
-   <h4 id="heading">Latest News updates</h4>
+   <h4 id="heading">Sports News</h4>
    {% for response in responses %}
    <div class="clearfix">
 
    <div class="row">
       <div class="col-3">
          {% if response.image == "None" %}
-         <img src="{% static 'images/screennews.png'%}" width="150px" height="160px" alt="Default image">
+         <img src="{% static 'images/screennews.png'%}" width="150px" height="160px">
          {% else %}
          <img src="{{ response.image }}"  width="150px" height="160px" alt="{{ response.image}} image" >
          {% endif %}
