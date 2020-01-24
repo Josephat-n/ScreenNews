@@ -7,6 +7,7 @@ import requests
 from django.conf import settings
 
 # Create your views here.
+@login_required(login_url='/login/')
 def home(request):
    all_news = []
    # This API endpoint will get the latest news from Current news API
