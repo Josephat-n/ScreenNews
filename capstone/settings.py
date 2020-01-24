@@ -1,4 +1,5 @@
 import os
+import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
@@ -27,6 +28,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,3 +137,6 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
 AUTH_USER_MODEL = 'news.User'
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())
