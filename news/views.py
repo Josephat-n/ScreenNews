@@ -72,6 +72,28 @@ def sports(request):
    }   
    return render(request,'news/sports.html', context)
    
+def business(request):
+   sports_news= []
+   #### FETCH SPORTS NEWS FROM THE CURRENT API #####
+   currentapi_base_url = 'https://api.currentsapi.services/v1/search?category={}&apiKey={}'
+   sports_url = currentapi_base_url.format(business,settings.CURRENT_API_KEY)
+   sportsList = requests.get(sports_url).json()['news']   
+
+   for item in sportsList:
+      newsitem = {}
+      newsitem['title'] = item['title']
+      newsitem['description'] = item['description']
+      newsitem['url'] = item['url']
+      newsitem['author'] = item['author']
+      newsitem['image'] = item['image'] 
+      newsitem['date'] = item['published']      
+      sports_news.append(newsitem) 
+
+   context = {
+      'responses': sports_news
+   }   
+   return render(request,'news/business.html', context)
+
 def register(request):
    if request.method == 'POST':
       form = UserRegisterForm(request.POST)
