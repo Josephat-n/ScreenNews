@@ -15,8 +15,8 @@
     </form>
        <!-- Navbar Right Side -->
        <div class="navbar-nav">
-        {% if user.is_authenticated %}
-        <span class="label label-default">{{ user.username }}</span>
+         {% if user.is_authenticated %}
+         <span class="label label-default" style="margin-left:4px; margin-top:7px; display: inline-block; color:white;">{{ user.username }}</span>
         <a class="nav-item nav-link" href="{% url 'user-profile' %}">Profile</a>
         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
       {% else %}

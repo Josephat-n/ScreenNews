@@ -30,15 +30,17 @@
         {% block content %}  {%endblock%}
       </div> 
       <div class="col-md-4">
-        <div class="hor-nav">  
-          <ul>       
-          <li><a class="active" href="#">Select By Category</a></li>
-          <li><a href="{% url 'business-news' %}">Business</a></li>
-          <li><a href="{% url 'sports-news' %}">Sports</a></li>
-          <li><a href="#">Politics</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          </ul>
-       </div>
+        <div class="news-wrapper" style="color: rgb(245, 57, 57);">
+          <div class="hor-nav" style="margin: 2%;">  
+            <ul>       
+              <li><a class="active" href="#">Select By Category</a></li>
+              <li><a href="{% url 'business-news' %}">Business</a></li>
+              <li><a href="{% url 'sports-news' %}">Sports</a></li>
+              <li><a href="#">Politics</a></li>
+              <li><a href="#">Lifestyle</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

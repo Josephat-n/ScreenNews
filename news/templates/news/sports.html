@@ -12,7 +12,7 @@
    <div class="news-wrapper" style="background-color: #11aabd;">
       {% for response in responses %}
       <div class="news-section">
-      <div class="row">
+         <div class="row">
             <div class="col-3">
                {% if response.image == "None" %}
                <img src="{% static 'images/screennews.png'%}" width="100px" height="110px">
@@ -28,8 +28,7 @@
                   <p>Published on: {{ response.date }} </p>
                </div>
                <div class="news-buttons">
-                  <a href="{{response.url}}"><button class="btn btn-info">Read More</button></a>
-                  
+                  <a href="{{response.url}}" target="{url 'news-article'}"><button class="btn btn-info">Read More</button></a>                  
                   <button class="btn btn-info readbtn">Read Later</button>
                </div>
             </div>

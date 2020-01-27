@@ -9,27 +9,32 @@
 {% block content %} 
 {% load static %}
    <h4 id="heading">Top Business News</h4>
-   {% for response in responses %}
-   <div class="clearfix">
-
-   <div class="row">
-      <div class="col-3">
-         {% if response.image == "None" %}
-         <img src="{% static 'images/screennews.png'%}" width="150px" height="160px">
-         {% else %}
-         <img src="{{ response.image }}"  width="150px" height="160px" alt="{{ response.image}} image" >
-         {% endif %}
-      </div>     
-      <div class="col-9">
-         <h3>{{response.title}}</h3>
-         <ul class="list-group">
-            <li class="list-group-item">{{response.description}}</li>
-            <li class="list-group-item">Published on: {{ response.published }}</li>
-            <a href="{{response.url}}"><button class="btn btn-info">Read More</button></a>
-         </ul>   
-      </div> 
+   <div class="news-wrapper" style="background-color: #11aabd;">
+      {% for response in responses %}
+      <div class="news-section">
+      <div class="row">
+            <div class="col-3">
+               {% if response.image == "None" %}
+               <img src="{% static 'images/screennews.png'%}" width="100px" height="110px">
+               {% else %}
+               <img src="{{ response.image }}"  width="150px" height="160px" alt="{{ response.image}} image" >
+               {% endif %}
+            </div>          
+            <div class="col-9">
+               <p class= "news-title">{{response.title}}</p>
+               <p class= "news-content">{{response.description}}</p>
+               <div class="news-about">
+                  <p>Source:{{response.author}} </p>
+                  <p>Published on: {{ response.date }} </p>
+               </div>
+               <div class="news-buttons">
+                  <a href="{{response.url}}" target="{url 'news-article'}"><button class="btn btn-info">Read More</button></a>                  
+                  <button class="btn btn-info readbtn">Read Later</button>
+               </div>
+            </div>
+         </div> 
+      </div><br>  
+      {% endfor %}
    </div>
-   </div><br>
-   {% endfor %}
   
 {%endblock content%}

@@ -10,9 +10,9 @@
       <p>Screen News keeps you posted with relevant, authentic & screened news.</p>
       <hr>
       <div class ="welcome-buttons">
-         <button type="button" class="btn btn-primary">READ NEWS</button> 
-         <button type="button" class="btn btn-primary">REGISTER</button> 
-         <button type="button" class="btn btn-primary">LOGIN</button> 
+         <a href="{% url 'screen-home' %}"><button type="button" class="btn btn-primary">READ NEWS</button></a>
+         <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">REGISTER</button></a>
+         <a href="{% url 'screen-home' %}"><button type="button" class="btn btn-primary">LOGIN</button></a>
       </div>      
    </div>
    </div>

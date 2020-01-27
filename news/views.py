@@ -12,6 +12,7 @@ def welcome(request):
    
    return render(request,'news/welcome.html')
 
+@login_required(login_url='/login/')
 def home(request):
    all_news = []
    # This API endpoint will get the latest news from Current news API
@@ -31,21 +32,21 @@ def home(request):
       newsitem['author'] = item['author']
       newsitem['image'] = item['urlToImage'] 
       newsitem['date'] = item['publishedAt']      
-   all_news.append(newsitem)    
+      all_news.append(newsitem)    
        
    #### FETCH NEWS FROM THE CURRENT API #####
-   # currentapi_url=currentapi_base_url.format(settings.CURRENT_API_KEY)
-   # resList = requests.get(currentapi_url).json()['news']
+   currentapi_url=currentapi_base_url.format(settings.CURRENT_API_KEY)
+   resList = requests.get(currentapi_url).json()['news']
    
-   # for item in resList:
-   #    newsArticle = {}
-   #    newsArticle['title'] = item['title']
-   #    newsArticle['description'] = item['description']
-   #    newsArticle['url'] = item['url']
-   #    newsArticle['author'] = item['author']
-   #    newsArticle['image'] = item['image'] 
-   #    newsArticle['date'] = item['published']      
-   # all_news.append(newsArticle) 
+   for item in resList:
+      newsArticle = {}
+      newsArticle['title'] = item['title']
+      newsArticle['description'] = item['description']
+      newsArticle['url'] = item['url']
+      newsArticle['author'] = item['author']
+      newsArticle['image'] = item['image'] 
+      newsArticle['date'] = item['published']      
+      all_news.append(newsArticle) 
             
    # ####### WHAT GETS DISPLAYED IN THE VIEW #########   
    context = {
