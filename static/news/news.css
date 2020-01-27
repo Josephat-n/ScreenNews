@@ -1,5 +1,5 @@
 .bg-steel {
-   background-color: #0a88e2;
+   background-color: #11aabd;
 }
 .content-section {
   background: #ffffff;
@@ -43,7 +43,83 @@ color: white;
 background-color: #555;
 color: white;
 }
-
 .body{
-  height: 4000px;
+  height: 4000px;  
+}
+.news-section{
+  margin: 1%;
+  background-color: white;
+  border: 1px solid black;
+}
+.news-section p{
+  margin: 0;
+  padding: 0;
+}
+.news-buttons {
+  display: inline;
+}
+.news-about p{
+  display: inline;
+  color: rgb(170, 86, 86);
+}
+.news-title{
+  font-style: oblique;
+  font-weight: bold;
+}
+.news-content{
+  font-size:small;
+}
+.news-wrapper{  
+  /* The image used */
+  background-image: url(/static/images/bgimage.png);
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+}
+.welcome-page{ 
+  height: 500px;
+}
+.welcome-bgimage{  
+  background-image: url(/static/images/screen2.jpeg);
+
+  /* Add the blur effect */
+  filter: blur(4px);
+  -webkit-filter: blur(2px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.3); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  /* border: 3px solid #f1f1f1; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  /* padding: 20px; */
+  text-align: center;
+}
+.welcome-buttons button{
+  margin: 10px;
+}
+.bg-text h3{
+  font-size:50px;
+  font-weight: bolder; 
+}
+.bg-text p{
+  font-size:30px
 }

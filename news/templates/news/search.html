@@ -1,14 +1,7 @@
 {%extends "base.html"%}
-{% load static %}
-{% load bootstrap4 %}
-{% block styles %}  
-{% bootstrap_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'news/news.css' %}">
-{% endblock %}
-
 {% block content %} 
 {% load static %}
-   <h4 id="heading">Top Sports News</h4>
+   <h4 id="heading">Search Results</h4>
    <div class="news-wrapper" style="background-color: #11aabd;">
       {% for response in responses %}
       <div class="news-section">
